@@ -1,0 +1,27 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  max-width: 100%;
+}
+
+/* ---------- root variables ---------- */
+:root {
+  --black: #222;
+  --white: #fff;
+  --font-family: "Lato", Lato, Arial, sans-serif;
+}
+
+/* ---------- general styling ---------- */
+
+body html {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+}
+
+
