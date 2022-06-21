@@ -8,9 +8,367 @@
 		<meta name="author" content="Karolina Anna Krysiak" />
 		<link rel="stylesheet" href="css/main.css" />
 		<link rel="shortcut icon" type="image/png" href="/icons/favicon_white.png" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet" />
 	</head>
 
 	<body onhashchange="pageChange()">
+		<header>
+			<div class="navbar">
+				<a href="/"><img class="logo" src="icons/logo.png" alt="Fafner logo" /></a>
+				<div class="navbar-links">
+					<a class="nav-hover" href="/">Home</a>
+					<a class="nav-hover" href="#services">Services</a>
+					<a class="nav-hover" href="#cases">Cases</a>
+					<a class="nav-hover" href="#news">News</a>
+					<a class="nav-hover" href="#about">About us</a>
+				</div>
+				<div>
+					<a href="#contact">Contact us ></a>
+				</div>
+			</div>
+
+			<div class="mobile-menu">
+				<div>
+					<div class="nav-item">
+						<a href="/"><img class="mobile-logo" src="icons/logo.png" alt="Fafner logo" /></a>
+					</div>
+					<div class="burger-menu" onclick="openNav()">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+				</div>
+
+				<!-- The overlay -->
+				<div id="myNav" class="overlay">
+					<!-- Button to close the overlay navigation -->
+					<a href="javascript:void(0)" class="closebtn" onclick="closeNavX()">&times;</a>
+
+					<!-- Overlay content -->
+					<div class="overlay-content">
+						<a href="/">Home</a>
+						<span onclick="openNav1()">Activities ></span>
+						<a href="#events" onclick="closeNav()">Events</a>
+						<span onclick="openNav2()">Lore ></span>
+						<a href="#gallery" onclick="closeNav()">Gallery</a>
+						<span onclick="openNav3()">About ></span>
+						<a href="#contact"
+							><img class="mobile-membership" src="icons/membership.png" alt="Become member button"
+						/></a>
+					</div>
+				</div>
+
+				<!-- The overlay -->
+				<div id="myNav1" class="overlay">
+					<!-- Arrow to close the overlay navigation -->
+					<a href="javascript:void(0)" class="close-arrow" onclick="closeNavArrow1()"> < Back</a>
+					<!-- Button to close the overlay navigation -->
+					<a href="javascript:void(0)" class="closebtn" onclick="closeNavX1()">&times;</a>
+					<!-- Overlay content -->
+					<div class="overlay-content">
+						<a href="#fight-club" onclick="closeNav1()">Fight Club</a>
+						<a href="#larp" onclick="closeNav1()">LARP</a>
+						<a href="#games" onclick="closeNav1()">Tabletop Games</a>
+						<a href="#workshops" onclick="closeNav1()">Workshops</a>
+						<a href="https://www.foreninglet.dk/teamenrollment/index/092039734f60d5d/8415"
+							><img class="mobile-membership" src="icons/membership.png" alt="Become member button"
+						/></a>
+					</div>
+				</div>
+
+				<!-- The overlay -->
+				<div id="myNav2" class="overlay">
+					<!-- Arrow to close the overlay navigation -->
+					<a href="javascript:void(0)" class="close-arrow" onclick="closeNavArrow1()"> < Back</a>
+					<!-- Button to close the overlay navigation -->
+					<a href="javascript:void(0)" class="closebtn" onclick="closeNavX2()">&times;</a>
+					<!-- Overlay content -->
+					<div class="overlay-content">
+						<a href="#niebelungen" onclick="closeNav2()">Niebelungen</a>
+						<a href="#other" onclick="closeNav2()">Other</a>
+						<a href="https://www.foreninglet.dk/teamenrollment/index/092039734f60d5d/8415"
+							><img class="mobile-membership" src="icons/membership.png" alt="Become member button"
+						/></a>
+					</div>
+				</div>
+
+				<!-- The overlay -->
+				<div id="myNav3" class="overlay">
+					<!-- Arrow to close the overlay navigation -->
+					<a href="javascript:void(0)" class="close-arrow" onclick="closeNavArrow1()"> < Back</a>
+					<!-- Button to close the overlay navigation -->
+					<a href="javascript:void(0)" class="closebtn" onclick="closeNavX3()">&times;</a>
+					<!-- Overlay content -->
+					<div class="overlay-content">
+						<a href="#info" onclick="closeNav3()">Practical Information</a>
+						<a href="#contact" onclick="closeNav3()">Contact</a>
+						<a href="#team" onclick="closeNav3()">The Team</a>
+						<a href="#team" onclick="closeNav3()"
+							><img class="mobile-membership" src="icons/membership.png" alt="Become member button"
+						/></a>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<!-------------------------------------------------------- pages -------------------------------------------------------->
+
+		<!----------------- home page ----------------->
+		<section id="main" class="page">
+			<!-- landing section -->
+			<section class="landing-section">
+				<img src="img/background.jpg" class="bg" />
+				<div class="welcome">
+					<h1>RHEASOFT IT Development</h1>
+
+					<p>
+						We operate within a wide range of IT aspects,from application development, data migration, complex
+						integrations, to cloud development.
+					</p>
+					<p>We help companies, big or small, and public authorities across Europe.</p>
+					<p>How can we help you?</p>
+
+					<a href="#services">
+						<div class="button"><span>See what we can help you with</span></div>
+					</a>
+				</div>
+			</section>
+
+			<!-- tiles sections with  links to other pages -->
+			<section class="two-parts-section">
+				<div class="half-two-parts-section">
+					<img src="img/background.jpg" class="img-half" alt="cases" />
+				</div>
+				<div class="half-two-parts-section">
+					<div>
+						<h3>Cases</h3>
+						<p>
+							Application development, data migration, complex integrations, to cloud development. We develop and
+							maintain software that meets indyvidual needs of our clients
+						</p>
+					</div>
+
+					<a href="#cases">
+						<div class="button"><span>Read more ></span></div>
+					</a>
+				</div>
+			</section>
+
+			<section class="two-parts-section reverse">
+				<div class="half-two-parts-section">
+					<div>
+						<h3>About us</h3>
+						<p>
+							Rheasoft is a Danish IT company founded in 2018 and located in Aarhus, Denmark. Despite Rheasoft’s
+							relatively young age the company is run by a team with more than 60 years of experience in the
+							field between them and they have worked together for years.
+						</p>
+					</div>
+
+					<a href="#about">
+						<div class="button"><span>Read more ></span></div>
+					</a>
+				</div>
+				<div class="half-two-parts-section">
+					<img src="img/background.jpg" class="img-half" alt="about section image" />
+				</div>
+			</section>
+
+			<!-- Slideshow with testimonials container -->
+			<div class="slideshow-container">
+				<div>
+					<h2>Our customers</h2>
+					<h2>Customers opinions</h2>
+				</div>
+				<!-- Full-width images with number and caption text -->
+				<div class="mySlides fade">
+					<div>
+						<img class="client-profile" />
+						<span class="testimonial"></span>
+					</div>
+					<div class="client-description">
+						<h5></h5>
+						<h5></h5>
+						<h5></h5>
+					</div>
+				</div>
+
+				<div class="mySlides fade"></div>
+
+				<div class="mySlides fade"></div>
+
+				<!-- Next and previous buttons -->
+				<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+				<a class="next" onclick="plusSlides(1)">&#10095;</a>
+			</div>
+			<br />
+
+			<!-- The dots/circles -->
+			<div style="text-align: center">
+				<span class="dot" onclick="currentSlide(1)"></span>
+				<span class="dot" onclick="currentSlide(2)"></span>
+				<span class="dot" onclick="currentSlide(3)"></span>
+			</div>
+		</section>
+
+		<!----------------- services page ----------------->
+
+		<section id="services" class="page">
+			<!-- top of the page with background -->
+
+			<section class="landing-section">
+				<img src="img/background.jpg" class="bg" />
+				<div class="welcome">
+					<h1>RHEASOFT IT Development</h1>
+
+					<p>
+						We operate within a wide range of IT aspects,from application development, data migration, complex
+						integrations, to cloud development.
+					</p>
+					<p>We help companies, big or small, and public authorities across Europe.</p>
+					<p>How can we help you?</p>
+
+					<a href="#services">
+						<div class="button"><span>See what we can help you with</span></div>
+					</a>
+				</div>
+			</section>
+
+			<!-- tiles sections with links to other pages -->
+			<section class="two-parts-section reverse">
+				<div class="half-two-parts-section">
+					<div>
+						<h3>About us</h3>
+						<p>
+							Rheasoft is a Danish IT company founded in 2018 and located in Aarhus, Denmark. Despite Rheasoft’s
+							relatively young age the company is run by a team with more than 60 years of experience in the
+							field between them and they have worked together for years.
+						</p>
+					</div>
+
+					<a href="#about">
+						<div class="button"><span>Read more ></span></div>
+					</a>
+				</div>
+				<div class="half-two-parts-section">
+					<img src="img/background.jpg" class="img-half" alt="about section image" />
+				</div>
+			</section>
+
+			<section class="two-parts-section">
+				<div class="half-two-parts-section">
+					<img src="img/background.jpg" class="img-half" alt="cases" />
+				</div>
+				<div class="half-two-parts-section">
+					<div>
+						<h3>Cases</h3>
+						<p>
+							Application development, data migration, complex integrations, to cloud development. We develop and
+							maintain software that meets indyvidual needs of our clients
+						</p>
+					</div>
+
+					<a href="#cases">
+						<div class="button"><span>Read more ></span></div>
+					</a>
+				</div>
+			</section>
+			<section class="two-parts-section reverse">
+				<div class="half-two-parts-section">
+					<div>
+						<h3>About us</h3>
+						<p>
+							Rheasoft is a Danish IT company founded in 2018 and located in Aarhus, Denmark. Despite Rheasoft’s
+							relatively young age the company is run by a team with more than 60 years of experience in the
+							field between them and they have worked together for years.
+						</p>
+					</div>
+
+					<a href="#about">
+						<div class="button"><span>Read more ></span></div>
+					</a>
+				</div>
+				<div class="half-two-parts-section">
+					<img src="img/background.jpg" class="img-half" alt="about section image" />
+				</div>
+			</section>
+		</section>
+
+		<!----------------- cases page ----------------->
+
+		<section id="cases" class="page">
+			<!-- top of the page with background -->
+		</section>
+
+		<!----------------- news page ----------------->
+		<section id="news" class="page"></section>
+
+		<!----------------- about page ----------------->
+		<section id="about" class="page">
+			<!-- top of the page with background -->
+
+			<!-- tiles sections with links to other pages -->
+			<section class="two-parts-section reverse">
+				<div class="half-two-parts-section">
+					<div>
+						<h3>About us</h3>
+						<p>
+							Rheasoft is a Danish IT company founded in 2018 and located in Aarhus, Denmark. Despite Rheasoft’s
+							relatively young age the company is run by a team with more than 60 years of experience in the
+							field between them and they have worked together for years.
+						</p>
+					</div>
+
+					<a href="#about">
+						<div class="button"><span>Read more ></span></div>
+					</a>
+				</div>
+				<div class="half-two-parts-section">
+					<img src="img/background.jpg" class="img-half" alt="about section image" />
+				</div>
+			</section>
+
+			<section class="two-parts-section">
+				<div class="half-two-parts-section">
+					<img src="img/background.jpg" class="img-half" alt="cases" />
+				</div>
+				<div class="half-two-parts-section">
+					<div>
+						<h3>Cases</h3>
+						<p>
+							Application development, data migration, complex integrations, to cloud development. We develop and
+							maintain software that meets indyvidual needs of our clients
+						</p>
+					</div>
+
+					<a href="#cases">
+						<div class="button"><span>Read more ></span></div>
+					</a>
+				</div>
+			</section>
+		</section>
+
+		<!----------------- CONTACT PAGE ----------------->
+		<section id="contact" class="page"></section>
+
+		<!----------------- FOOTER ----------------->
+		<footer>
+			<div class="footer-elements">
+				<div class="footer-element contact-element">
+					<h4>Contact Us</h4>
+				</div>
+				<div>
+					<h4>Facebook Group</h4>
+				</div>
+				<div class="footer-element">
+					<h4>Where We Are</h4>
+				</div>
+			</div>
+			<p class="copyright"></p>
+		</footer>
+
 		<!-- SPA functionality  -->
 		<script src="js/spa.js"></script>
 		<!-- main js file -->
