@@ -19,12 +19,55 @@
 
 /* ---------- general styling ---------- */
 
-body html {
+body, html {
   width: 100%;
+  height: 100%;
   margin: 0px;
   padding: 0px;
-  overflow-x: hidden;
+  overflow-x: hidden; 
   font-family: var(--font-family);
+}
+
+/*----- button -----*/
+.button {
+  background-color: transparent;
+  border: 2px solid #1A1A1A;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #3B3B3B;
+  cursor: pointer;
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+  margin: auto;
+  height: 60px;
+  width: 350px;
+  outline: none;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  will-change: transform;
+}
+
+.button:disabled {
+  pointer-events: none;
+}
+
+.button:hover {
+  color: #fff;
+  background-color: #1A1A1A;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.button:active {
+  box-shadow: none;
+  transform: translateY(0);
 }
 
 
@@ -199,25 +242,35 @@ body html {
   }
 }
 
+/* --------------- contact section above footer ------------- */
+.contact-section {
+  overflow-y: hidden;
+  height: 500px;
+  background-image: url('../img/triangles.jpg');
+  background-size: cover;
+}
+
+
+/* ---------------------- footer ----------------------*/
+
+
+
 /* ------------ section 1 ------------ */
 
 .landing-section {
   overflow-y: hidden;
   height: 100vh;
+  background-image: url('../img/background.jpg');
+  background-size: cover;
 }
 
-.bg {
-  width: 100%;
-  max-height: 100%;
-  object-fit: cover;
-  z-index: -1;
-}
 
 .welcome {
-  position: absolute;
-  bottom: 10%;
-  left: 10%;
+  display: block;
+  position: relative;
+  text-align: center;
 }
+
 
 /* ------------ tiles ------------ */
 
@@ -268,17 +321,30 @@ body html {
 
 /* ------------ testimonials -------------- */
 
+.container-inner-shadow {
+  width: 100%;
+  position: relative;
+  box-shadow: inset 1px 4px 9px -6px #888, inset 1px -4px 9px -6px #888;
+}
+
 /* Slideshow container */
 .slideshow-container {
   width: 100%;
   height: 400px;
   position: relative;
   margin: auto;
+  box-shadow: inset 1px 4px 9px -6px #888, inset 1px -4px 9px -6px #888;
 }
 
 /* Hide slides by default */
 .mySlides {
   display: none;
+}
+
+/*header*/
+.testimonials-header{
+text-align: center;
+margin: 50px;
 }
 
 /* Next & previous buttons */
@@ -346,6 +412,24 @@ body html {
   to {opacity: 1}
 }
 
+/*--------- testimonial content -----------*/
+
+.client-profile {
+  height: 150px;
+  width: 150px;
+  border-radius: 100%;
+}
+
+.testimonial-container {
+
+}
+
+.client-description {
+  position: relative;
+  left: 70%;
+}
+
+
 /* ------------ SERVICES PAGE STYLING ------------ */
 
 /*-- top of the page --*/
@@ -368,97 +452,64 @@ body html {
 
 
 
-/*-- article --*/
-.article-element {
-  padding: 50px;
-}
-
-.article-element h3 {
-  margin: 50px auto;
-}
-
-.article-element p {
-  margin: 50px auto;
-}
-
-.parallax {
-  background-image: url("../img/fightclub.JPG");
-  min-height: 450px;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-
-/*-- parallax --*/
-
-#f1 {
-  background-image: url("../img/fightclub.JPG");
-}
-
-#f2 {
-  background-image: url("../img/f2.jpg");
-}
-
-#f3 {
-  background-image: url("../img/f3.jpg");
-}
-
-/*-- larp parallax --*/
-
-#l1 {
-  background-image: url("../img/LARP.JPG");
-}
-
-#l2 {
-  background-image: url("../img/l2.JPG");
-}
-
-#l3 {
-  background-image: url("../img/l3.jpg");
-}
-
-/*-- games parallax --*/
-
-#g1 {
-  background-image: url("../img/games.jpg");
-}
-
-#g2 {
-  background-image: url("../img/g2.JPG");
-}
-
-/*-- workshop parallax --*/
-
-#w1 {
-  background-image: url("../img/workshops.jpg");
-}
-
-#w2 {
-  background-image: url("../img/w2.JPG");
-}
-
-@media only screen and (max-device-width: 1366px) {
-  .parallax {
-    background-attachment: scroll;
+/*-------------------------- cases page styling -------------------*/
+@-webkit-keyframes scroll {
+  0% {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
   }
-}
-
-@media screen and (max-device-width: 900px) {
-  .two-parts-section {
-    flex-direction: column-reverse;
-    height: 100%;
+  100% {
+  -webkit-transform: translateX(calc(-250px * 7));
+  transform: translateX(calc(-250px * 7));
   }
-
-  .reverse {
-    flex-direction: column;
   }
-
-  .half-two-parts-section {
-    padding: 30px 0;
+  @keyframes scroll {
+  0% {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
   }
-}
+  100% {
+  -webkit-transform: translateX(calc(-250px * 7));
+  transform: translateX(calc(-250px * 7));
+  }
+  }
+  .slider {
+  background: pr;
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
+  height: 100px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: 960px;
+  }
+  .slider::before, .slider::after {
+  background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%);
+  content: "";
+  height: 100px;
+  position: absolute;
+  width: 200px;
+  z-index: 2;
+  }
+  .slider::after {
+  right: 0;
+  top: 0;
+  -webkit-transform: rotateZ(180deg);
+  transform: rotateZ(180deg);
+  }
+  .slider::before {
+  left: 0;
+  top: 0;
+  }
+  .slider .slide-track {
+  -webkit-animation: scroll 40s linear infinite;
+  animation: scroll 40s linear infinite;
+  display: flex;
+  width: calc(250px * 14);
+  }
+  .slider .slide {
+  height: 100px;
+  width: 250px;
+  }
 
 
 /* ------------ footer styling------------ */
