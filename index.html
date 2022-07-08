@@ -164,7 +164,7 @@
 					<h2>Are you interested in cooperation?</h2>
 					<span class="separating-line"></span>
 					<h3>Contact us now!</h3>
-					<button class="button" role="button">See what we can help you with</button>
+					<button class="button button-reverse" role="button">See what we can help you with</button>
 				</div>
 			</section>
 		</section>
@@ -242,6 +242,25 @@
 				<div class="half-two-parts-section">
 					<img src="img/background.jpg" class="img-half" alt="about section image" />
 				</div>
+			</section>
+
+			<section class="triangles-section">
+				<img src="icons/triangle_left.png" class="left-triangle" />
+				<div style="text-align: center">
+					<div style="display: flex; flex-direction: column">
+						<h2>We work with:</h2>
+						<span>Backend and frontend systems </span>
+						<span>Cybersecurity </span>
+						<span>Visualisation of complex data </span>
+						<span>Data migration </span>
+						<span>Complex integrations </span>
+						<span>User administration</span>
+					</div>
+					<a href="#about">
+						<div class="button"><span>Read more ></span></div>
+					</a>
+				</div>
+				<img src="icons/triangle_right.png" class="right-triangle" />
 			</section>
 		</section>
 
@@ -381,14 +400,94 @@
 					</div>
 				</div>
 			</div>
+
+			<section class="projects-section">
+				<div>
+					<div class="project-img"></div>
+				</div>
+			</section>
 		</section>
 
 		<!----------------- news page ----------------->
-		<section id="news" class="page"></section>
+		<section id="news" class="page">
+			<div class="container">
+				<h1 class="heading">our daily posts</h1>
+
+				<div class="box-container">
+					<div class="box">
+						<iframe
+							src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:6947844182266806272"
+							height="925"
+							width="504"
+							frameborder="0"
+							allowfullscreen=""
+							title="Embedded post"
+						></iframe>
+					</div>
+
+					<div class="box">
+						<iframe
+							src="https://www.linkedin.com/embed/feed/update/urn:li:share:6945654199149838336"
+							height="1233"
+							width="504"
+							frameborder="0"
+							allowfullscreen=""
+							title="Embedded post"
+						></iframe>
+					</div>
+
+					<div class="box">
+						<iframe
+							src="https://www.linkedin.com/embed/feed/update/urn:li:share:6940218362316636160"
+							height="1513"
+							width="504"
+							frameborder="0"
+							allowfullscreen=""
+							title="Embedded post"
+						></iframe>
+					</div>
+
+					<div class="box">
+						<iframe
+							src="https://www.linkedin.com/embed/feed/update/urn:li:share:6944931932090609665"
+							height="1027"
+							width="504"
+							frameborder="0"
+							allowfullscreen=""
+							title="Embedded post"
+						></iframe>
+					</div>
+
+					<div class="box">
+						<iframe
+							src="https://www.linkedin.com/embed/feed/update/urn:li:share:6925741262176153600"
+							height="774"
+							width="504"
+							frameborder="0"
+							allowfullscreen=""
+							title="Embedded post"
+						></iframe>
+					</div>
+				</div>
+
+				<div id="load-more">load more</div>
+			</div>
+		</section>
 
 		<!----------------- about page ----------------->
 		<section id="about" class="page">
-			<!-- top of the page with background -->
+			<!-- landing section -->
+			<section class="landing-section">
+				<div class="welcome">
+					<h1>RHEASOFT IT Development</h1>
+					<p>
+						We operate within a wide range of IT aspects,from application development, data migration, complex
+						integrations, to cloud development.
+					</p>
+					<p>We help companies, big or small, and public authorities across Europe.</p>
+					<p>How can we help you?</p>
+				</div>
+			</section>
 
 			<!-- tiles sections with links to other pages -->
 			<section class="two-parts-section reverse">
@@ -429,25 +528,218 @@
 					</a>
 				</div>
 			</section>
+
+			<section class="triangles-section">
+				<img src="icons/triangle_left.png" class="left-triangle" />
+				<span
+					>We prioritise functionality and security in our work as we believe it is most crucial for the quality of
+					our work. Furthermore, we make room for innovation and finding new ways to address challenges. The world
+					is not static, why should we be?</span
+				>
+				<img src="icons/triangle_right.png" class="right-triangle" />
+			</section>
+			<section class="triangles-section triangle-bg">
+				<span
+					>From our office in Åbyhøj, Aarhus do we not only assist Danish clients but also international clients
+					such as municipalities like Roma Capitale, Italy and Larissa, Greece. We have the experience to jump
+					straight into larger complex enterprise IT systems, however, we also happily handle smaller projects
+					which just need a pair of experienced hands. We handle everything from application development, data
+					migration, complex integrations, to cloud deployment.</span
+				>
+			</section>
+			<section class="triangles-section">
+				<img src="icons/triangle_left.png" class="left-triangle" />
+				<span
+					>After participating in an EU Horizon2020 IT cybersecurity awareness project, we helped founding the
+					CS-AWARE Corporation OÜ and represent it as CS-AWARE Danmark in Denmark, which we are very pleased with
+					and proud of, as it aligns perfectly with our own values.</span
+				>
+				<img src="icons/triangle_right.png" class="right-triangle" />
+			</section>
+
+			<!-- vertical slider -->
+			<section class="v-slider-section">
+				<section class="v-slider triangle-bg">
+					<div class="v-content_container">
+						<ul class="v-slide_navigation">
+							<li><a href="#slide_1" class="active">Slide 1</a></li>
+							<li><a href="#slide_2">Slide 2</a></li>
+							<li><a href="#slide_3">Slide 3</a></li>
+							<li><a href="#slide_4">Slide 4</a></li>
+							<li><a href="#slide_5">Slide 5</a></li>
+						</ul>
+					</div>
+
+					<div class="v-slides">
+						<div class="v-slide">
+							<div class="v-inner_content">
+								<h1>Slide 1</h1>
+								<p>
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+									labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+									laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+									voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+									cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+								</p>
+							</div>
+						</div>
+
+						<div class="v-slide">
+							<div class="v-inner_content">
+								<h1>Slide 2</h1>
+								<p>
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+									labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+									laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+									voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+									cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+								</p>
+							</div>
+						</div>
+
+						<div class="v-slide">
+							<div class="v-inner_content">
+								<h1>Slide 3</h1>
+								<p>
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+									labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+									laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+									voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+									cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+								</p>
+							</div>
+						</div>
+
+						<div class="v-slide">
+							<div class="v-inner_content">
+								<h1>Slide 3</h1>
+								<p>
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+									labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+									laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+									voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+									cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+								</p>
+							</div>
+						</div>
+
+						<div class="v-slide">
+							<div class="v-inner_content">
+								<h1>Slide 3</h1>
+								<p>
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+									labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+									laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+									voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+									cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+								</p>
+							</div>
+						</div>
+					</div>
+				</section>
+			</section>
 		</section>
 
 		<!----------------- CONTACT PAGE ----------------->
-		<section id="contact" class="page"></section>
+		<section id="contact" class="page">
+			<!-- tiles sections with contact form -->
+			<section class="two-parts-section">
+				<div class="half-two-parts-section triangle-bg">
+					<div>
+						<h3>Cases</h3>
+						<p>
+							Application development, data migration, complex integrations, to cloud development. We develop and
+							maintain software that meets indyvidual needs of our clients
+						</p>
+					</div>
+
+					<a href="#cases">
+						<div class="button"><span>Read more ></span></div>
+					</a>
+				</div>
+				<div class="half-two-parts-section">
+					<div class="wrapper">
+						<header>Send us a Message</header>
+						<form action="#">
+							<div class="dbl-field">
+								<div class="field">
+									<input type="text" name="name" placeholder="Enter your name" />
+									<i class="fas fa-user"></i>
+								</div>
+								<div class="field">
+									<input type="text" name="email" placeholder="Enter your email" />
+								</div>
+							</div>
+							<div class="dbl-field">
+								<div class="field">
+									<input type="text" name="company" placeholder="Enter your company name" />
+								</div>
+							</div>
+							<div class="message">
+								<textarea placeholder="Write your message" name="message"></textarea>
+							</div>
+							<div class="button-area">
+								<button type="submit">Send Message</button>
+								<span></span>
+							</div>
+						</form>
+					</div>
+				</div>
+			</section>
+
+			<!-- small separating section -->
+			<section class="contact-separate-section">
+				<div>
+					<h2>Company info</h2>
+					<h3>Our office</h3>
+				</div>
+			</section>
+
+			<!-- tiles sections with map -->
+			<section class="two-parts-section">
+				<div class="half-two-parts-section triangle-bg"></div>
+				<div class="half-two-parts-section">
+					<div>
+						<h3>Cases</h3>
+						<p>
+							Application development, data migration, complex integrations, to cloud development. We develop and
+							maintain software that meets indyvidual needs of our clients
+						</p>
+					</div>
+
+					<a href="#cases">
+						<div class="button"><span>Read more ></span></div>
+					</a>
+				</div>
+			</section>
+		</section>
 
 		<!----------------- FOOTER ----------------->
 		<footer>
 			<div class="footer-elements">
-				<div class="footer-element contact-element">
-					<h4>Contact Us</h4>
-				</div>
-				<div>
-					<h4>Facebook Group</h4>
+				<div class="footer-element">
+					<h4>Menu</h4>
+					<a href="#">Home</a>
+					<a href="#services">Services</a>
+					<a href="#cases">Cases</a>
+					<a href="#news">News</a>
+					<a href="#about">About</a>
 				</div>
 				<div class="footer-element">
-					<h4>Where We Are</h4>
+					<h4>Contact</h4>
+					<span>Mail: <a href="mailto:mail@rheasoft.dk">mail@rheasoft.dk</a></span>
+					<span>Tel: <a href="tel:+4523362472">+45 2336 2472</a></span>
+					<span
+						>Rheasoft ApS <br />
+						Klamsagervej 35, 1.<br />
+						8230 Åbyhøj<br />
+						Denmark</span
+					>
+				</div>
+				<div class="footer-element">
+					<h4>Social Media</h4>
 				</div>
 			</div>
-			<p class="copyright"></p>
 		</footer>
 
 		<!-- SPA functionality  -->

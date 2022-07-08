@@ -19,22 +19,27 @@
 
 /* ---------- general styling ---------- */
 
-body, html {
+ body, html {
   width: 100%;
   height: 100%;
   margin: 0px;
   padding: 0px;
   overflow-x: hidden; 
   font-family: var(--font-family);
+  color: var(--black);
+}
+
+a {
+  text-decoration: none;
 }
 
 /*----- button -----*/
 .button {
   background-color: transparent;
-  border: 2px solid #1A1A1A;
+  border: 3px solid var(--blue);
   border-radius: 15px;
   box-sizing: border-box;
-  color: #3B3B3B;
+  color: var(--blue);
   cursor: pointer;
   display: block;
   font-size: 16px;
@@ -59,8 +64,8 @@ body, html {
 }
 
 .button:hover {
-  color: #fff;
-  background-color: #1A1A1A;
+  color: var(--white);
+  background-color: var(--blue);
   box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
   transform: translateY(-2px);
 }
@@ -68,6 +73,23 @@ body, html {
 .button:active {
   box-shadow: none;
   transform: translateY(0);
+}
+
+.button-reverse {
+  border: 3px solid var(--white);
+  color: var(--white);
+}
+
+.button-reverse:hover {
+  color: var(--blue);
+  background-color: var(--white);
+}
+
+/* -----triangle background ------*/
+.triangle-bg {
+  background-image: url('../img/triangles.jpg');
+  background-size: cover;
+  height: 100%;
 }
 
 
@@ -79,26 +101,31 @@ body, html {
   overflow: hidden;
   background-color: var(--white);
   box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  position: fixed;
+  z-index: 999;
 }
 
 .navbar a {
   float: left;
   color: var(--black);
   text-align: center;
-  padding: 18px;
+  padding: 10px 30px;
   text-decoration: none;
   margin: 10px 0;
+  border-radius: 7px;
 }
 
 .logo {
   position: absolute;
-  top: 0px;
+  top: -5px;
   left: 10px;
   height: 70px;
 }
 
 .nav-hover:hover {
   background-color: var(--blue);
+  color: var(--white);
 }
 
 .membership {
@@ -307,17 +334,6 @@ body, html {
   object-fit: cover;
 }
 
-.btn {
-  height: 100px;
-  display: block;
-  margin: auto;
-}
-
-.icon {
-  height: 120px;
-  display: block;
-  margin: auto;
-}
 
 /* ------------ testimonials -------------- */
 
@@ -430,24 +446,94 @@ margin: 50px;
 }
 
 
-/* ------------ SERVICES PAGE STYLING ------------ */
+/* ----------------------- NEWS PAGE STYLING ---------------------- */
 
-/*-- top of the page --*/
-.activity-top {
-  padding: 50px 0;
-  background-image: url("../img/forest.png");
-  background-position: center;
+
+
+
+.container{
+box-sizing: border-box;
+outline: none; border:none;
+text-decoration: none;
+text-transform: capitalize;
+transition: all .2s linear;
+max-width: 1400px;
+margin: 0 auto;
+text-align: center;
+padding:25px 20px;
 }
 
-.activity-top img {
-  height: 200px;
-  display: block;
-  margin: auto;
+.container .heading{
+ font-size: 40px;
+ margin-bottom: 20px;
 }
 
-.activity-top h2,
-.activity-top h4 {
-  text-align: center;
+.container .box-container{
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+ gap:20px;
+}
+
+.container .box-container .box{
+ padding:20px;
+ border-radius: 5px;
+ box-shadow: 0 5px 10px rgba(0,0,0,.2);
+ display: none;
+}
+
+.container .box-container .box:nth-child(1),
+.container .box-container .box:nth-child(2),
+.container .box-container .box:nth-child(3){
+ display: inline-block;
+}
+
+.container .box-container .box .content .btn{
+ display: inline-block;
+ padding:10px 30px;
+ border:1px solid #334;
+ color:#334;
+ font-size: 16px;
+}
+
+#load-more{
+ margin-top: 20px;
+ display: inline-block;
+ padding:13px 30px;
+ border:1px solid #334;
+ color:#334;
+ font-size: 16px;
+ background-color: #fff;
+ cursor: pointer;
+}
+
+#load-more:hover{
+ background-color: crimson;
+ border-color: crimson;
+ color:#fff;
+}
+
+@media (max-width:450px){
+
+ .container .heading{
+   font-size: 25px;
+ }
+
+ .container .box-container{
+   grid-template-columns: 1fr;
+ }
+
+ .container .box-container .box .image{
+   height: 200px;
+ }
+
+ .container .box-container .box .content p{
+   font-size: 12px;
+ }
+
+ .container .box-container .box .content .icons span{
+   font-size: 12px;
+ }
+
 }
 
 
@@ -511,49 +597,292 @@ margin: 50px;
   width: 250px;
   }
 
+  /* ------------------------ About page ---------------------- */
+  .triangles-section {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .triangles-section img {
+    height: 300px;
+  }
+  .triangles-section span {
+    width: 300px;
+  }
+
+.v-slider-section {
+  justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    overflow-y: hidden;
+} 
+
+.v-slider a{
+    color: inherit;
+}
+
+.v-slider ul{
+    list-style: none;
+    padding: 0;
+}
+
+.v-slider ul > * + *{
+    margin-top: 10px;
+}
+
+.v-slider li{
+    display: block;
+}
+
+.v-slider li a.active{
+    font-weight: bold;
+}
+
+.v-slider{
+   width: 100%;
+    color: var(--white);
+    height: 500px;
+    grid-template-columns: 35% 65%;
+    position: relative;
+    display: grid;   
+}
+
+.v-slider .v-content_container{
+    padding: 40px;
+}
+
+.v-slider .v-slides{
+    overflow-y: auto;
+    max-height: 500px;
+    scrollbar-width: none;
+}
+
+.v-slider .v-slides::-webkit-scrollbar{
+    display: none;
+}
+
+.v-slider .v-slides .v-slide{
+    min-height: calc(100% - 80px);
+    display: flex;
+    padding: 40px;
+    color: #333;
+    align-items: center;
+    width: 450px;
+}
+
+
+ 
+
+  
+
+  /* ------------------------ contact page -------------------- */
+.contact-separate-section{
+  width: 100%;
+  text-align: center;
+} 
+.contact-separate-section div {
+  display: block;
+  margin: auto;
+  padding: 100px;
+}
+
+/* ---------- contact form ------------ */
+
+::selection{
+  color: #fff;
+  background: #0D6EFD;
+}
+.wrapper{
+  width: 715px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 10px 10px 10px rgba(0,0,0,0.05);
+}
+.wrapper header{
+  font-size: 22px;
+  font-weight: 600;
+  padding: 20px 30px;
+  border-bottom: 1px solid #ccc;
+}
+.wrapper form{
+  margin: 35px 30px;
+}
+.wrapper form.disabled{
+  pointer-events: none;
+  opacity: 0.7;
+}
+form .dbl-field{
+  display: flex;
+  margin-bottom: 25px;
+  justify-content: space-between;
+}
+.dbl-field .field{
+  height: 50px;
+  display: flex;
+  position: relative;
+  width: calc(100% / 2 - 13px);
+}
+.wrapper form i{
+  position: absolute;
+  top: 50%;
+  left: 18px;
+  color: #ccc;
+  font-size: 17px;
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+form .field input,
+form .message textarea{
+  width: 100%;
+  height: 100%;
+  outline: none;
+  padding: 0 18px 0 48px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+.field input::placeholder,
+.message textarea::placeholder{
+  color: #ccc;
+}
+.field input:focus,
+.message textarea:focus{
+  padding-left: 47px;
+  border: 2px solid #0D6EFD;
+}
+.field input:focus ~ i,
+.message textarea:focus ~ i{
+  color: #0D6EFD;
+}
+form .message{
+  position: relative;
+}
+form .message i{
+  top: 30px;
+  font-size: 20px;
+}
+form .message textarea{
+  min-height: 130px;
+  max-height: 230px;
+  max-width: 100%;
+  min-width: 100%;
+  padding: 15px 20px 0 48px;
+}
+form .message textarea::-webkit-scrollbar{
+  width: 0px;
+}
+.message textarea:focus{
+  padding-top: 14px;
+}
+form .button-area{
+  margin: 25px 0;
+  display: flex;
+  align-items: center;
+}
+.button-area button{
+  color: #fff;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 13px 25px;
+  background: #0D6EFD;
+  transition: background 0.3s ease;
+}
+.button-area button:hover{
+  background: #025ce3;
+}
+.button-area span{
+  font-size: 17px;
+  margin-left: 30px;
+  display: none;
+}
+@media (max-width: 600px){
+  .wrapper header{
+    text-align: center;
+  }
+  .wrapper form{
+    margin: 35px 20px;
+  }
+  form .dbl-field{
+    flex-direction: column;
+    margin-bottom: 0px;
+  }
+  form .dbl-field .field{
+    width: 100%;
+    height: 45px;
+    margin-bottom: 20px;
+  }
+  form .message textarea{
+    resize: none;
+  }
+  form .button-area{
+    margin-top: 20px;
+    flex-direction: column;
+  }
+  .button-area button{
+    width: 100%;
+    padding: 11px 0;
+    font-size: 16px;
+  }
+  .button-area span{
+    margin: 20px 0 0;
+    text-align: center;
+  }
+}
+
 
 /* ------------ footer styling------------ */
 
 footer {
   width: 100%;
   box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.3);
+  background-color: var(--grey);
+  color: var(--white);
+  
 }
 
 footer h4 {
   text-align: center;
   margin-bottom: 30px;
+  margin-top: 60px;
+  font-size: 24px;
+  color: var(--blue);
+  font-weight: lighter;
 }
 
 .footer-elements {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  
   padding: 50px;
 }
 
 .footer-element {
   margin: 0 30px;
   height: 400px;
+  display: flex;
+  flex-direction: column;
 }
 
-/* contact part */
-.contact-element p {
-  margin-bottom: 15px;
-}
 
-.contact-element a {
+.footer-element a {
   color: var(--white);
   font-weight: bold;
+  margin-bottom: 20px;
 }
 
-/*copyright*/
-.copyright {
-  text-align: center;
-  font-size: 11px;
-  font-weight: lighter;
-  margin: auto;
-  padding-bottom: 10px;
+.footer-element span {
+  margin-bottom: 20px;
 }
+
+
 
 @media (max-width: 900px) {
   .footer-elements {

@@ -129,223 +129,111 @@ function closeNav3() {
 	});
 }
 
-/*
-global variables
-*/
-let _allEvents = [];
-let _characters = [];
-let _selectedCharacter = [];
-let _allMembers = [];
+/* contact form */
+const form = document.querySelector("form"),
+	statusTxt = form.querySelector(".button-area span");
 
-/*
-Fetches json data from the file events.json
-*/
+form.onsubmit = (e) => {
+	e.preventDefault();
+	statusTxt.style.color = "#0D6EFD";
+	statusTxt.style.display = "block";
+	statusTxt.innerText = "Sending your message...";
+	form.classList.add("disabled");
 
-async function fetchEvents() {
-	let response = await fetch("json/events.json");
-	let data = await response.json();
-	_allEvents = data;
-	appendEvents(_allEvents);
-}
-
-fetchEvents();
-
-/*
-Appends json data to the DOM
-*/
-function appendEvents(events) {
-	let htmlTemplate = "";
-	for (let event of events) {
-		htmlTemplate += /*html*/ `
-      <section class="activity-section" style="height:450px">
-        <div class="half-activity-section">
-            <img src="${event.img}" class="img-half">
-        </div>
-        <div class="half-activity-section">
-
-          <div>
-            <h4>${event.name}</h4>
-            <p style="text-align: center;">${event.date}</p>
-            <p>${event.description}</p>
-          </div>
- 
-          <a href="${event.link}"><img class="btn" src="icons/btn.png"></a>
-        </div>
-  </section>
-  <img alt="grey line" src="icons/line.png" class="line-events">
-
-    `;
-	}
-	document.querySelector("#event-section").innerHTML = htmlTemplate;
-}
-
-/*
-Fetches json data from the file characters.json
-*/
-async function fetchData() {
-	const response = await fetch("json/characters.json");
-	const data = await response.json();
-	_characters = data;
-	console.log(_characters);
-	appendCharacters(_characters);
-}
-
-fetchData();
-
-function appendCharacters(characters) {
-	let htmlTemplate = "";
-	for (let character of characters) {
-		htmlTemplate += /*html*/ `
-      
-        <article  id="myBtn">
-          <div class="character-pic-container">
-            <img  class="character-pic" src="${character.img}">
-          </div>
-          <h5>${character.name}</h5>
-          <div id="myModal" class="modal">
-
-            <div id="sheetClose" class="modal-content">
-              <span  onclick="closeSheet()" class="close">&times;</span>
-                <div class="character-sheet">
-                  <div class="description-top">
-                    <div class="character-pic-sheet">
-                  <img  class="character-pic" src="${character.img}">
-                    </div> 
-                  <div class="short-description">
-                      <h3>${character.name}</h3>
-                      <p>Occupation: ${character.occupation}</p>
-                      <p>Skills: ${character.skills}</p>
-                      <p> Hobbies: ${character.hobbies}</p>
-                      <p>Alignment: ${character.alignment}</p>
-                      <p>${character.alignment} type: ${character.type}</p>
-                    </div>
-                  </div>
-                  <p class="description-bottom">${character.description}</p>
-                </div>
-
-            </div>
-          </div>
-        </article>
-        
-
-    `;
-	}
-	document.querySelector("#characters-grid").innerHTML = htmlTemplate;
-}
-
-/*Fetches json data from the file members.json*/
-async function fetchMembers() {
-	let response = await fetch("json/members.json");
-	let data = await response.json();
-	_allMembers = data;
-	appendMembers(_allMembers);
-}
-
-fetchMembers();
-
-/*
-Appends json data to the DOM
-*/
-function appendMembers(members) {
-	let htmlTemplate = "";
-	for (let member of members) {
-		htmlTemplate += /*html*/ `
-      
-        <div class="single-member">
-          <div class="single-member-image">
-            <img alt="team-member" src="${member.img}" >
-          </div>
-          <div class="single-member-text">
-            <h4>${member.name}</h4>
-            <p>${member.description}</p>
-          </div>
-        </div>
-     
-
-    `;
-	}
-	document.querySelector("#members").innerHTML = htmlTemplate;
-}
-
-/*
-Displays more image gallery from JSON on scroll
-*/
-const URL = "json/data.json";
-document.addEventListener("DOMContentLoaded", () => {
-	let options = {
-		root: null,
-		rootMargins: "0px",
-		threshold: 0.5,
-	};
-	const observer = new IntersectionObserver(handleIntersect, options);
-	observer.observe(document.querySelector("footer"));
-	getData();
-});
-
-function handleIntersect(entries) {
-	if (entries[0].isIntersecting) {
-		getData();
-	}
-}
-
-/*
-Loops through elements fetched from JSON and assigns attributes to them
-*/
-function setClass() {
-	let x = document.getElementById("content");
-	let y = x.getElementsByTagName("a");
-	let i;
-	for (i = 0; i < y.length; i++) {
-		y[i].setAttribute("href", "??????????????????????");
-		y[i].setAttribute("data-lightbox", "mygallery");
-	}
-}
-
-/*
-Creates DOM elements from data fetched from JSON
-*/
-function getData() {
-	let content = document.getElementById("content");
-	fetch(URL)
-		.then((response) => response.json())
-		.then((data) => {
-			data.items.forEach((item) => {
-				let imageContainer = document.createElement("a");
-				let img = document.createElement("img");
-				img.src = item.img;
-				imageContainer.appendChild(img);
-				content.appendChild(imageContainer);
-
-				setClass();
-			});
-		});
-}
-
-window.onload = function () {
-	// Get the modal
-	var modal = document.getElementById("myModal");
-
-	// Get the button that opens the modal
-	var btn = document.getElementById("myBtn");
-
-	// When the user clicks on the button, open the modal
-	btn.onclick = function () {
-		modal.style.display = "block";
-	};
-
-	// When the user clicks on <span> (x), close the modal
-	span.onclick = function () {
-		modal.style.display = "none";
-	};
-
-	// When the user clicks anywhere outside of the modal, close it
-	window.onclick = function (event) {
-		if (event.target == modal) {
-			modal.style.display = "none";
+	let xhr = new XMLHttpRequest();
+	xhr.open("POST", "message.php", true);
+	xhr.onload = () => {
+		if (xhr.readyState == 4 && xhr.status == 200) {
+			let response = xhr.response;
+			if (
+				response.indexOf("Email and message field is required!") != -1 ||
+				response.indexOf("Enter a valid email address!") != -1 ||
+				response.indexOf("Sorry, failed to send your message!") != -1
+			) {
+				statusTxt.style.color = "red";
+			} else {
+				form.reset();
+				setTimeout(() => {
+					statusTxt.style.display = "none";
+				}, 3000);
+			}
+			statusTxt.innerText = response;
+			form.classList.remove("disabled");
 		}
 	};
+	let formData = new FormData(form);
+	xhr.send(formData);
 };
 
-function closeSheet() {
-	document.getElementById("sheetClose").style.display = "none";
-}
+/* ------------------- vertical slider -------------------- */
+
+(function () {
+	// Vertical Slider object
+	const vertical_slider = {
+		// Slide class name
+		slider_class: ".v-slider",
+
+		// Show slide
+		show_slide: function (slide_id, context_item) {
+			const slide_container = context_item.closest(this.slider_class).querySelector(".v-slides");
+			if (slide_container) {
+				const slides = slide_container.querySelectorAll(".v-slide");
+				if (slides && slides[slide_id]) {
+					// Scroll to active slide
+					slide_container.scrollTo({
+						top: slides[slide_id].offsetTop,
+						behavior: "smooth",
+					});
+
+					// Set active context item
+					const active_context_item = context_item.closest(".v-slide_navigation").querySelector(".active");
+					if (active_context_item) {
+						active_context_item.classList.remove("active");
+					}
+
+					context_item.classList.add("active");
+				}
+			}
+		},
+
+		// Initialize slide
+		init_slider: function (slider) {
+			const navigation_items = slider.querySelectorAll(".v-slide_navigation a");
+
+			if (navigation_items) {
+				Object.keys(navigation_items).forEach(function (key) {
+					navigation_items[key].onclick = function (e) {
+						e.preventDefault();
+
+						vertical_slider.show_slide(key, navigation_items[key]);
+					};
+				});
+			}
+		},
+
+		// Initialize sliders
+		init: function () {
+			// Iterate over each slider
+			document.querySelectorAll(this.slider_class).forEach((slider) => this.init_slider(slider));
+		},
+	};
+
+	// Initialize sliders
+	vertical_slider.init();
+})();
+
+/* ---------------- load more --------------- */
+let loadMoreBtn = document.querySelector("#load-more");
+let currentItem = 3;
+
+loadMoreBtn.onclick = () => {
+	let boxes = [...document.querySelectorAll(".container .box-container .box")];
+	for (var i = currentItem; i < currentItem + 3; i++) {
+		boxes[i].style.display = "inline-block";
+	}
+	currentItem += 3;
+
+	if (currentItem >= boxes.length) {
+		loadMoreBtn.style.display = "none";
+	}
+};
