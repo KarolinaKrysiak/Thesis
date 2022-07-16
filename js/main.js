@@ -129,7 +129,7 @@ function closeNav3() {
 	});
 }
 
-/* contact form */
+/* ------------------------ contact form ----------------------------- */
 const form = document.querySelector("form"),
 	statusTxt = form.querySelector(".button-area span");
 

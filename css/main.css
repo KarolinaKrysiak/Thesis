@@ -96,13 +96,13 @@ a {
 /* ---------- navbar ---------- */
 .navbar {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   overflow: hidden;
   background-color: var(--white);
   box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.3);
   width: 100%;
-  position: fixed;
+  position:fixed;
   z-index: 999;
 }
 
@@ -114,6 +114,12 @@ a {
   text-decoration: none;
   margin: 10px 0;
   border-radius: 7px;
+}
+.contact-button a{
+  background-color: var(--blue);
+  color: var(--white);
+  font-weight: bold;
+  margin-right: 30px;
 }
 
 .logo {
@@ -128,12 +134,7 @@ a {
   color: var(--white);
 }
 
-.membership {
-  position: absolute;
-  top: -8px;
-  right: 0;
-  height: 100px;
-}
+
 
 @media (max-width: 900px) {
   .navbar {
@@ -273,12 +274,28 @@ a {
 .contact-section {
   overflow-y: hidden;
   height: 500px;
-  background-image: url('../img/triangles.jpg');
-  background-size: cover;
+}
+.contact-section div {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  left: 50%;
+top: 50%;
+transform: translate(-50%, -50%);
 }
 
+.contact-section span {
+  margin: 25px auto;
+height: 3px;
+width: 250px;
+border-radius: 20px;
+background-color: var(--white);
+}
 
-/* ---------------------- footer ----------------------*/
+.contact-section button {
+  margin-top: 50px;
+}
 
 
 
@@ -289,6 +306,9 @@ a {
   height: 100vh;
   background-image: url('../img/background.jpg');
   background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 
@@ -296,7 +316,18 @@ a {
   display: block;
   position: relative;
   text-align: center;
+  width: 500px;
+  margin: auto;
+  color: var(--white);
+  text-shadow: 0 0 5px var(--black);
 }
+.welcome h1 {
+  margin-bottom: 50px;
+}
+.welcome p {
+  margin-top: 25px;
+}
+
 
 
 /* ------------ tiles ------------ */
@@ -613,6 +644,7 @@ padding:25px 20px;
     width: 300px;
   }
 
+  /* --------------- vertical slider ----------------- */
 .v-slider-section {
   justify-content: center;
     align-items: center;
@@ -674,12 +706,35 @@ padding:25px 20px;
     width: 450px;
 }
 
+/* --------------- profiles section ----------------- */
+ .profile-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 500px;
+ }
+
+ .profile-section img {
+  height: 350px;
+  width: auto;
+ }
+
+ .profile-section p {
+  width: 450px;
+  margin-top: 30px;
+
+ }
+ 
+ .profile-section h3,h4 {
+  text-align: center;
+  margin: 10px;
+ }
 
  
 
   
 
-  /* ------------------------ contact page -------------------- */
+  /* ---------------------------- contact page ---------------------------- */
 .contact-separate-section{
   width: 100%;
   text-align: center;
