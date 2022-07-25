@@ -1,6 +1,40 @@
 "use strict";
 
-/* ------------ testimonials --------------*/
+/* ------------ testimonials slideshow--------------*/
+let testimonialsSlideIndex = 1;
+showTestimonials(testimonialsSlideIndex);
+
+// Next/previous controls
+function nextTestimonial(n) {
+	showTestimonials((testimonialsSlideIndex += n));
+}
+
+// Thumbnail image controls
+function currentTestimonial(n) {
+	showTestimonials((testimonialsSlideIndex = n));
+}
+
+function showTestimonials(n) {
+	let i;
+	let slides = document.getElementsByClassName("testimonialsSlides");
+	let dots = document.getElementsByClassName("dot");
+	if (n > slides.length) {
+		testimonialsSlideIndex = 1;
+	}
+	if (n < 1) {
+		testimonialsSlideIndex = slides.length;
+	}
+	for (i = 0; i < slides.length; i++) {
+		slides[i].style.display = "none";
+	}
+	for (i = 0; i < dots.length; i++) {
+		dots[i].className = dots[i].className.replace(" active", "");
+	}
+	slides[testimonialsSlideIndex - 1].style.display = "block";
+	dots[testimonialsSlideIndex - 1].className += " active";
+}
+
+/* ------------ values slideshow --------------*/
 let slideIndex = 1;
 showSlides(slideIndex);
 
@@ -17,7 +51,7 @@ function currentSlide(n) {
 function showSlides(n) {
 	let i;
 	let slides = document.getElementsByClassName("mySlides");
-	let dots = document.getElementsByClassName("dot");
+	let dots = document.getElementsByClassName("value-header");
 	if (n > slides.length) {
 		slideIndex = 1;
 	}
@@ -28,10 +62,10 @@ function showSlides(n) {
 		slides[i].style.display = "none";
 	}
 	for (i = 0; i < dots.length; i++) {
-		dots[i].className = dots[i].className.replace(" active", "");
+		dots[i].className = dots[i].className.replace(" active-header", "");
 	}
 	slides[slideIndex - 1].style.display = "block";
-	dots[slideIndex - 1].className += " active";
+	dots[slideIndex - 1].className += " active-header";
 }
 
 /*-------- navbar ---------*/
@@ -135,7 +169,7 @@ const form = document.querySelector("form"),
 
 form.onsubmit = (e) => {
 	e.preventDefault();
-	statusTxt.style.color = "#0D6EFD";
+	statusTxt.style.color = "#39D7FF";
 	statusTxt.style.display = "block";
 	statusTxt.innerText = "Sending your message...";
 	form.classList.add("disabled");
@@ -164,63 +198,6 @@ form.onsubmit = (e) => {
 	let formData = new FormData(form);
 	xhr.send(formData);
 };
-
-/* ------------------- vertical slider -------------------- */
-
-(function () {
-	// Vertical Slider object
-	const vertical_slider = {
-		// Slide class name
-		slider_class: ".v-slider",
-
-		// Show slide
-		show_slide: function (slide_id, context_item) {
-			const slide_container = context_item.closest(this.slider_class).querySelector(".v-slides");
-			if (slide_container) {
-				const slides = slide_container.querySelectorAll(".v-slide");
-				if (slides && slides[slide_id]) {
-					// Scroll to active slide
-					slide_container.scrollTo({
-						top: slides[slide_id].offsetTop,
-						behavior: "smooth",
-					});
-
-					// Set active context item
-					const active_context_item = context_item.closest(".v-slide_navigation").querySelector(".active");
-					if (active_context_item) {
-						active_context_item.classList.remove("active");
-					}
-
-					context_item.classList.add("active");
-				}
-			}
-		},
-
-		// Initialize slide
-		init_slider: function (slider) {
-			const navigation_items = slider.querySelectorAll(".v-slide_navigation a");
-
-			if (navigation_items) {
-				Object.keys(navigation_items).forEach(function (key) {
-					navigation_items[key].onclick = function (e) {
-						e.preventDefault();
-
-						vertical_slider.show_slide(key, navigation_items[key]);
-					};
-				});
-			}
-		},
-
-		// Initialize sliders
-		init: function () {
-			// Iterate over each slider
-			document.querySelectorAll(this.slider_class).forEach((slider) => this.init_slider(slider));
-		},
-	};
-
-	// Initialize sliders
-	vertical_slider.init();
-})();
 
 /* ---------------- load more --------------- */
 let loadMoreBtn = document.querySelector("#load-more");
