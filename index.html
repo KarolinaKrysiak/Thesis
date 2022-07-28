@@ -2,8 +2,8 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<title>Rheasoft</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+		<title>Rheasoft</title>
 		<meta
 			name="description"
 			content="RHEASOFT IT Development - We operate within a wide range of IT aspects,from application development, data migration, complex integrations, to cloud development."
@@ -61,7 +61,7 @@
 						<a href="#cases" onclick="closeNav()">Cases</a>
 						<a href="#news" onclick="closeNav()">News</a>
 						<a href="#about" onclick="closeNav()">About us</a>
-						<a href="#contact" onclick="closeNav()">Contact us ></a>
+						<a class="mobile-contact-button" href="#contact" onclick="closeNav()">Contact us ></a>
 					</div>
 				</div>
 			</div>
@@ -129,7 +129,7 @@
 			</section>
 
 			<!-- Slideshow with testimonials container -->
-			<div class="slideshow-container">
+			<div class="slideshow-container inner-shadow">
 				<div class="testimonials-header">
 					<h2>Our customers</h2>
 					<h2>Customers opinions</h2>
@@ -137,35 +137,62 @@
 				<!-- Full-width images with number and caption text -->
 				<div class="testimonialsSlides fade">
 					<div class="testimonial-container">
-						<img src="img/background.jpg" alt="photo of the client" class="client-profile" />
-						<span class="testimonial"
-							>" *placeholder for testimonial* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+						<img src="img/profile.png" alt="photo of the client" class="client-profile" />
+						<span>
+							" *1 placeholder for testimonial* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 							eiusmod tempor incididunt ut labore et dolore magna aliqua. "</span
 						>
 					</div>
 					<div class="client-description">
 						<h5>Joe Doe</h5>
 						<h5>CEO</h5>
-						<h5>*company name*</h5>
+						<h5>company name</h5>
 					</div>
 				</div>
 
-				<div class="testimonialsSlides fade"></div>
+				<div class="testimonialsSlides fade">
+					<div class="testimonial-container">
+						<img src="img/profile.png" alt="photo of the client" class="client-profile" />
+						<span>
+							" *2 placeholder for testimonial* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+							eiusmod tempor incididunt ut labore et dolore magna aliqua. "</span
+						>
+					</div>
+					<div class="client-description">
+						<h5>Joe Doe</h5>
+						<h5>CEO</h5>
+						<h5>company name</h5>
+					</div>
+				</div>
 
-				<div class="testimonialsSlides fade"></div>
+				<div class="testimonialsSlides fade">
+					<div class="testimonial-container">
+						<img src="img/profile.png" alt="photo of the client" class="client-profile" />
+						<span>
+							" *3 placeholder for testimonial* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+							eiusmod tempor incididunt ut labore et dolore magna aliqua. "</span
+						>
+					</div>
+					<div class="client-description">
+						<h5>Joe Doe</h5>
+						<h5>CEO</h5>
+						<h5>company name</h5>
+					</div>
+				</div>
 
 				<!-- Next and previous buttons -->
-				<a class="prev" onclick="nextTestimonial(-1)">&#10094;</a>
-				<a class="next" onclick="nextTestimonial(1)">&#10095;</a>
-			</div>
-			<br />
-
-			<!-- The dots/circles -->
-			<div style="text-align: center">
+				<a class="prev outer-shadow" onclick="nextTestimonial(-1)">&#10094;</a>
+				<a class="next outer-shadow" onclick="nextTestimonial(1)">&#10095;</a>
+				<!-- The dots/circles -->
+			<div class="testimonials-dots">
 				<span class="dot" onclick="currentTestimonial(1)"></span>
 				<span class="dot" onclick="currentTestimonial(2)"></span>
 				<span class="dot" onclick="currentTestimonial(3)"></span>
 			</div>
+			</div>
+			<br />
+
+			
 
 			<section class="contact-section triangle-bg">
 				<div>
@@ -250,7 +277,7 @@
 				</div>
 			</section>
 
-			<section class="triangles-section">
+			<section class="triangles-section inner-shadow">
 				<img src="icons/triangle_left.png" class="left-triangle" />
 				<div style="text-align: center">
 					<div style="display: flex; flex-direction: column">
@@ -297,23 +324,23 @@
 					</p>
 				</div>
 			</section>
-			<section class="clients-slider-container">
+			<section class="clients-slider-container inner-shadow">
 				<h2>Our customers</h2>
 				<h3>The companies and institutions we have cooperated with</h3>
 
 				<div class="clients-slider">
-					<div>
+					<a href="https://cs-aware.com/" target="_blank" rel="noopener noreferrer">
 						<img src="icons/cs-aware.png" />
 						<h4>CS-Aware</h4>
-					</div>
-					<div>
+					</a>
+					<a href="https://tdc.dk/" target="_blank" rel="noopener noreferrer">
+						<img src="icons/TDC.png" />
+						<h4>TDC</h4>
+					</a>
+					<a href="https://cs-aware.com/" target="_blank" rel="noopener noreferrer">
 						<img src="icons/cs-aware.png" />
 						<h4>CS-Aware</h4>
-					</div>
-					<div>
-						<img src="icons/cs-aware.png" />
-						<h4>CS-Aware</h4>
-					</div>
+					</a>
 				</div>
 			</section>
 
@@ -323,7 +350,7 @@
 				<div class="project-tiles-section">
 					<div class="project-tile">
 						<a href="https://cs-aware.com/demos/" target="_blank" rel="noopener noreferrer">
-							<img class="project-tile-img" src="img/background.jpg" />
+							<img class="project-tile-img" src="icons/cs-logo.jpg" />
 							<div class="project-tile-description">
 								<div>
 									<img src="icons/cs-aware.png" />
@@ -340,17 +367,25 @@
 					</div>
 
 					<div class="project-tile">
-						<a href="https://cs-aware.com/demos/" target="_blank" rel="noopener noreferrer">
-							<img class="project-tile-img" src="img/background.jpg" />
+						<a
+							href="https://cs-aware.com/2022/03/21/cs-aware-corporation-has-successfully-acquired-a-new-horizon-europe-research-project/"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+					
+							<img class="project-tile-img" src="icons/CS-AWARE-NEXT.png" />
+						
 							<div class="project-tile-description">
 								<div>
-									<img src="icons/cs-aware.png" />
+									<img src="icons/CS-AWARE-NEXT.png" />
 									<span class="project-tile-category">Cybersecurity</span>
 								</div>
-								<h4>CS-Aware</h4>
+								<h4>CS-Aware NEXT</h4>
 								<p>
-									Ongoing software development support including a solution that helps with cybersecurity
-									issues
+									This project builds on the legacy of the CS-AWARE project, from which the CS-AWARE
+									Corporation originated. It focuses on the introduction of dynamic cybersecurity management
+									for organisations and local and regional supply chain networks, based on awareness and
+									collaboration.
 								</p>
 								<span class="project-pseudo-link">Go to the project ></span>
 							</div>
@@ -358,77 +393,23 @@
 					</div>
 
 					<div class="project-tile">
-						<a href="https://cs-aware.com/demos/" target="_blank" rel="noopener noreferrer">
-							<img class="project-tile-img" src="img/background.jpg" />
+						<a href="http://rheapitchboard.eu/" target="_blank" rel="noopener noreferrer">
+							<img class="project-tile-img" src="img/rheapitchboard-logo.jpg" />
 							<div class="project-tile-description">
 								<div>
-									<img src="icons/cs-aware.png" />
-									<span class="project-tile-category">Cybersecurity</span>
+									<img src="icons/rheapitchboard.png" />
+									<span class="project-tile-category">Planning and management</span>
 								</div>
-								<h4>CS-Aware</h4>
+								<h4>RheaPitchboard</h4>
 								<p>
-									Ongoing software development support including a solution that helps with cybersecurity
-									issues
+									A tool to manage everything from idea to scheduling, and from recording plan to documentation
 								</p>
 								<span class="project-pseudo-link">Go to the project ></span>
 							</div>
 						</a>
 					</div>
 
-					<div class="project-tile">
-						<a href="https://cs-aware.com/demos/" target="_blank" rel="noopener noreferrer">
-							<img class="project-tile-img" src="img/background.jpg" />
-							<div class="project-tile-description">
-								<div>
-									<img src="icons/cs-aware.png" />
-									<span class="project-tile-category">Cybersecurity</span>
-								</div>
-								<h4>CS-Aware</h4>
-								<p>
-									Ongoing software development support including a solution that helps with cybersecurity
-									issues
-								</p>
-								<span class="project-pseudo-link">Go to the project ></span>
-							</div>
-						</a>
-					</div>
-
-					<div class="project-tile">
-						<a href="https://cs-aware.com/demos/" target="_blank" rel="noopener noreferrer">
-							<img class="project-tile-img" src="img/background.jpg" />
-							<div class="project-tile-description">
-								<div>
-									<img src="icons/cs-aware.png" />
-									<span class="project-tile-category">Cybersecurity</span>
-								</div>
-								<h4>CS-Aware</h4>
-								<p>
-									Ongoing software development support including a solution that helps with cybersecurity
-									issues
-								</p>
-								<span class="project-pseudo-link">Go to the project ></span>
-							</div>
-						</a>
-					</div>
-
-					<div class="project-tile">
-						<a href="https://cs-aware.com/demos/" target="_blank" rel="noopener noreferrer">
-							<img class="project-tile-img" src="img/background.jpg" />
-							<div class="project-tile-description">
-								<div>
-									<img src="icons/cs-aware.png" />
-									<span class="project-tile-category">Cybersecurity</span>
-								</div>
-								<h4>CS-Aware</h4>
-								<p>
-									Ongoing software development support including a solution that helps with cybersecurity
-									issues
-								</p>
-								<span class="project-pseudo-link">Go to the project ></span>
-							</div>
-						</a>
-					</div>
-				</div>
+					
 			</section>
 			<section class="contact-section triangle-bg">
 				<div>
@@ -568,7 +549,7 @@
 				</div>
 			</section>
 
-			<section class="triangles-section">
+			<section class="triangles-section inner-shadow">
 				<img src="icons/triangle_left.png" class="left-triangle" />
 				<span
 					>We prioritise functionality and security in our work as we believe it is most crucial for the quality of
@@ -586,7 +567,7 @@
 					migration, complex integrations, to cloud deployment.</span
 				>
 			</section>
-			<section class="triangles-section">
+			<section class="triangles-section inner-shadow">
 				<img src="icons/triangle_left.png" class="left-triangle" />
 				<span
 					>After participating in an EU Horizon2020 IT cybersecurity awareness project, we helped founding the
@@ -667,14 +648,12 @@
 				</div>
 			</section>
 
-			<section class="profile-section">
+			<section class="profile-section inner-shadow">
 				<div>
 					<h3>CEO</h3>
 					<h4>Kim Gammelgaard</h4>
 					<p>
-						*placeholder for description* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-						ullamco laboris nisi ut aliquip ex ea commodo consequat
+						CEO and co-founder of RheaSoft ApS. An experienced Project Manager, Key Account Manager, Team Leader, and IT Solution Architect. More than 20 years of experience in the IT business, including executing, managing and supervising projects, delivering and selling IT development, operations, products as well as being team leader for more than a decade. A member of the The Danish ICT Industry Association IT Security Committee.<br> <br> Former and current tasks: CEO at Rheasoft ApS, Key Account Manager and Solution Architect at CloudPartners, Development domain, team leader and project manager at TDC, the Danish telco, for the GIS/network infrastructure area. In his career, he has been working on and with international projects for more than 35 years. He won the silver medal in the Michigan Science Olympics computer programming competition in 1983 but wanted to open his world view before starting an IT career, so he became Bachelor of Philosophy at Aarhus University, before going back to the IT business in 1998.
 					</p>
 				</div>
 				<img src="img/kim.png" alt="Kim Gammelgaard profile" />
@@ -686,20 +665,29 @@
 					<h3>SENIOR SOFTWARE DEVELOPER</h3>
 					<h4>Christian Weithøft</h4>
 					<p>
-						*placeholder for description* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-						ullamco laboris nisi ut aliquip ex ea commodo consequat
+						
 					</p>
 				</div>
 			</section>
-			<section class="profile-section">
+			<section class="profile-section inner-shadow">
 				<div>
 					<h3>SENIOR SOFTWARE DEVELOPER & ARCHITECT</h3>
 					<h4>Peter Alfred "Palfred" Østergaard</h4>
 					<p>
-						*placeholder for description* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-						ullamco laboris nisi ut aliquip ex ea commodo consequat
+						Experienced in server and UI programming.
+Application developer for systems mainly using Java.
+Experience with mentoring and teaching.
+<br> <br>
+
+Specialties: system development, 
+application development, 
+Java, 
+education, 
+mentoring, 
+programming languages, 
+code quality, 
+refactoring, 
+mobile device management (OMA DM)
 					</p>
 				</div>
 				<img src="img/peter.png" alt="Peter Østergaard profile" />
@@ -711,9 +699,7 @@
 					<h3>COMMUNICATION & MARKETING</h3>
 					<h4>Line Thorsen Sieg</h4>
 					<p>
-						*placeholder for description* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-						ullamco laboris nisi ut aliquip ex ea commodo consequat
+						
 					</p>
 				</div>
 			</section>
@@ -772,7 +758,7 @@
 			</section>
 
 			<!-- small separating section -->
-			<section class="contact-separate-section">
+			<section class="contact-separate-section inner-shadow">
 				<div>
 					<h2>Company info</h2>
 					<h3>Our office</h3>
@@ -842,6 +828,12 @@
 						<div>
 							<img src="icons/linkedin.svg" alt="linkedin logo" target="_blank" rel="noopener noreferrer" />
 							<span>CS-AWARE Corporation - Danmark</span>
+						</div>
+					</a>
+					<a href="https://twitter.com/RheaPitchboard">
+						<div>
+							<img src="icons/twitter.svg" alt="linkedin logo" target="_blank" rel="noopener noreferrer" />
+							<span>RheaPitchboard</span>
 						</div>
 					</a>
 				</div>

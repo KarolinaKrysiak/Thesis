@@ -1,6 +1,6 @@
 "use strict";
 
-// hide all pages
+// hide pages
 function hideAllPages() {
 	let pages = document.querySelectorAll(".page");
 	for (let page of pages) {
@@ -41,4 +41,4 @@ function pageChange() {
 	showPage(page);
 }
 
-pageChange(); // called by default when the app is loaded for the first time
+pageChange(); // caall the function

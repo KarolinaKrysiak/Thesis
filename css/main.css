@@ -12,13 +12,15 @@
 :root {
   --black: #222;
   --grey: #555;
+  --light-grey: #ccc;
   --white: #fff;
   --blue: #39D7FF;
   --font-family: 'Lato', sans-serif;
+  --inside-shadow: inset 1px 4px 9px -6px #888, inset 1px -4px 9px -6px #888;
+  --outside-shadow: 1px 4px 9px -6px #888, 1px -4px 9px -6px #888;
 }
 
 /* ---------- general styling ---------- */
-
  body, html {
   width: 100%;
   height: 100%;
@@ -191,6 +193,14 @@ h3 {
   background: var(--red);
 }
 
+.mobile-contact-button {
+  padding: 10px;
+  background-color: var(--blue);
+  border-radius: 10px;
+  max-width: 70%;
+  margin: 50px auto;
+}
+
 @media (min-width: 900px) {
   .mobile-menu {
     display: none;
@@ -314,7 +324,7 @@ background-color: var(--white);
 .landing-section {
   overflow-y: hidden;
   height: 100vh;
-  background-image: url('../img/background.jpg');
+  background-image: url('../img/triangles.jpg');
   background-size: cover;
   display: flex;
   flex-direction: column;
@@ -398,19 +408,13 @@ background-color: var(--white);
 
 /* ------------ testimonials -------------- */
 
-.container-inner-shadow {
-  width: 100%;
-  position: relative;
-  box-shadow: inset 1px 4px 9px -6px #888, inset 1px -4px 9px -6px #888;
-}
-
 /* Slideshow container */
 .slideshow-container {
   width: 100%;
-  height: 400px;
+  min-height: 450px;
   position: relative;
   margin: auto;
-  box-shadow: inset 1px 4px 9px -6px #888, inset 1px -4px 9px -6px #888;
+  padding-top: 50px;
 }
 
 /* Hide slides by default */
@@ -421,7 +425,11 @@ background-color: var(--white);
 /*header*/
 .testimonials-header{
 text-align: center;
-margin: 50px;
+margin: 0 50px;
+}
+
+.testimonials-header h2 {
+  margin-top: 0;
 }
 
 /* Next & previous buttons */
@@ -432,7 +440,7 @@ margin: 50px;
   width: auto;
   margin-top: -22px;
   padding: 16px;
-  color: white;
+  color: var(--light-grey);
   font-weight: bold;
   font-size: 18px;
   transition: 0.6s ease;
@@ -451,31 +459,26 @@ margin: 50px;
   background-color: rgba(0,0,0,0.8);
 }
 
-/* Caption text */
-.text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-}
 
 /* The dots/bullets/indicators */
+.testimonials-dots {
+  text-align: center;
+  padding: 50px 0 30px;
+}
+
 .dot {
   cursor: pointer;
   height: 15px;
   width: 15px;
   margin: 0 2px;
-  background-color: #bbb;
+  background-color: var(--light-grey);
   border-radius: 50%;
   display: inline-block;
   transition: background-color 0.6s ease;
 }
 
 .active, .dot:hover {
-  background-color: #717171;
+  background-color: var(--grey);
 }
 
 /* Fading animation */
@@ -498,12 +501,35 @@ margin: 50px;
 }
 
 .testimonial-container {
+ display: flex;
+ align-items: center;
+ justify-content: space-evenly;
+ padding: 0 100px;
+}
 
+.testimonial-container span{
+  padding: 0 50px;
+  width: 600px;
 }
 
 .client-description {
   position: relative;
   left: 70%;
+}
+
+@media screen and (max-device-width: 900px)  {
+  .testimonial-container {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .testimonial-container span {
+    margin: 50px auto;
+  }
+
+  .testimonial-container img {
+    margin-top: 50px;
+  }
 }
 
 
@@ -594,23 +620,28 @@ padding:25px 20px;
   padding: 50px 10px;
 }
 
+
+
 .clients-slider {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  margin-top: 50px;
 }
 .clients-slider img {
-  width: 250px;
+  max-width: 250px;
+  max-height: 80px;
 }
 
 /* ------ the cases ------ */
 
 .projects-section {
-margin: auto;
+margin: 100px auto;
 display: flex;
 flex-direction: column;
 align-items: center;
+
 }
 
 .project-tiles-section {
@@ -626,10 +657,12 @@ align-items: center;
   max-width: 80%;
   margin: 10px;
   display: inline-block;
+  box-shadow: var(--outside-shadow);
+  border-radius: 5px;
 }
 
 .project-tile-description {
-  padding: 0 10px 30px;
+  padding: 0 15px 30px;
 }
 
 .project-tile-description div {
@@ -639,8 +672,24 @@ align-items: center;
   align-items: initial;
 }
 
+.project-tile-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
 .project-tile-description img {
+  width: 40%;
   max-width: 200px;
+}
+
+.project-tile-description span {
+  width: 40%;
+  text-align: right;
+}
+
+.project-tile-description h4 {
+  margin-top: 10px;
 }
 
 
@@ -668,11 +717,22 @@ align-items: center;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: var(--inside-shadow);
+  }
+  
+  .inner-shadow {
+    box-shadow: var(--inside-shadow);
+  }
+
+  .outer-shadow {
+    box-shadow: var(--outside-shadow);
   }
 
   .triangles-section img {
     height: 300px;
   }
+
+  
   .triangles-section span {
     max-width: 90%;
     width: 500px;
@@ -696,7 +756,6 @@ align-items: center;
   height: 100%;
   width: 100%;
   overflow-y: hidden;
-  margin-bottom: 100px;
   padding: 150px 0;
   color: var(--white);
 }
@@ -754,7 +813,7 @@ margin: 15px 50px;
 .lightbulb {
   display: flex; 
   flex-direction: column; 
-  color: #ccc
+  color: var(--light-grey);
 }
 
 .lightbulb span {
@@ -765,7 +824,7 @@ margin: 15px 50px;
 }
 
 .lightbulb a {
-  color: #ccc; 
+  color: var(--light-grey); 
   text-decoration: underline
 }
 
@@ -788,10 +847,11 @@ margin: 15px 50px;
 
 /* --------------- profiles section ----------------- */
  .profile-section {
+  padding: 100px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  height: 500px;
+  min-height: 500px;
  }
 
  .profile-section img {
@@ -800,7 +860,7 @@ margin: 15px 50px;
  }
 
  .profile-section p {
-  width: 450px;
+  width: 500px;
   margin-top: 30px;
 
  }
@@ -848,7 +908,10 @@ margin: 15px 50px;
   flex-direction: column;
 }
 
-
+.contact-tile div {
+  display: flex;
+  flex-direction: column;
+}
 
 .contact-tile span {
   margin: 5px;
@@ -900,7 +963,7 @@ form .dbl-field{
   position: absolute;
   top: 50%;
   left: 18px;
-  color: #ccc;
+  color: var(--light-grey);
   font-size: 17px;
   pointer-events: none;
   transform: translateY(-50%);
@@ -914,11 +977,11 @@ form .message textarea{
   padding: 0 18px 0 48px;
   font-size: 16px;
   border-radius: 5px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--light-grey);
 }
 .field input::placeholder,
 .message textarea::placeholder{
-  color: #ccc;
+  color: var(--light-grey);
 }
 .field input:focus,
 .message textarea:focus{
@@ -1063,10 +1126,11 @@ footer h4 {
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin-bottom: 15px;
 }
 
 .footer-some img {
-  max-width: 35px;
+  max-width: 25px;
   margin-right: 20px;
 }
 
