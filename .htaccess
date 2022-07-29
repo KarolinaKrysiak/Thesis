@@ -1,5 +1,0 @@
-AuthType Basic
-AuthName "Protected Site"
-AuthUserFile /https://karolinakrysiak.com/Thesis.htpasswd
-require valid-user
-
